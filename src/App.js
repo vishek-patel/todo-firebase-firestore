@@ -83,7 +83,7 @@ function App() {
 
   return (
     <div className="App">
-     <h1>Todo app by Vishek</h1>
+     <h1 className="todo-heading">Todo app by Vishek</h1>
      <form>
 
      <TextField id="standard-basic" label="Write something here..." variant="standard" 
@@ -100,17 +100,17 @@ function App() {
       Add
       </Button>
         </form>
-
+    <div className="todo-container">
         {todo.map((temp)=>(
-              <div>
-                <h1>{temp.todo}</h1>
-                <button onClick={()=>deleteTodo(temp.id)}>Delete</button>
+              <div className="todo-items">
+                <h1 className='todo-title'>{temp.todo}</h1>
+                <button className='todo-delete-btn' onClick={()=>deleteTodo(temp.id)}>Delete</button>
                 {/* <h1>{temp.id}</h1> */}
               </div>
             ))}
         {/* <Todo  todos={todo} /> */}
 
-
+          </div>
     </div>
   );
 }
